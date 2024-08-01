@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        background-image: url(Aishwaryak_background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        color: white;
+      }
+
+      .login-container img {
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .login-container h2 {
+        margin-bottom: 20px;
+      }
+
+      .login-container input[type="text"],
+      .login-container input[type="password"] {
+        background: transparent;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid white;
+        color: white;
+        font-size: 16px;
+      }
+
+      .login-container input[type="submit"] {
+        background-color: #4caf50;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+      }
+
+      .login-container input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .login-container label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .login-container label span {
+        margin-left: 10px;
+      }
+
+      .login-container u {
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="PROFILE.jpg" width="100" height="100" alt="Profile Image">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter your password" required>
+            <label>
+                <input type="checkbox">
+                <span>Agree with <u>terms and conditions</u></span>
+            </label>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

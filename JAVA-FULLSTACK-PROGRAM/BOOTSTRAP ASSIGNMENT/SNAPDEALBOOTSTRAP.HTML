@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapdeal</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: calc(100vh - 80px); 
+            position: fixed; 
+            top: 80px; 
+            left: 0;
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding: 10px;
+            overflow-y: auto; 
+        }
+        .sidebar .nav-item {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 0;
+        }
+        .sidebar .nav-item a {
+            color: #495057;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .sidebar h5 {
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+        .sidebar .trending-searches {
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        .navdiv {
+            background-color: rgb(193, 29, 61);
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: calc(100% - 2px);
+            z-index: 3;
+        }
+        .navdiv .text {
+            color: aliceblue;
+            text-align: left;
+            font-size: small;
+        }
+        .navdiv ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .navdiv li {
+            margin: 10px;
+            color: white;
+            font-size: small;
+        }
+        .navbar {
+            background-color: rgb(228, 0, 71);
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 15px;
+            position: fixed;
+            top: 5vh;
+            left: 0;
+            width: calc(100% - 2px);
+            z-index: 4;
+        }
+        .logo {
+            color: white;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+        }
+        .logo img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            width: 300px;
+        }
+        .search input {
+            padding: 10px;
+            border: 1px solid grey;
+            flex: 1;
+            background: #f1f1f1;
+            border-radius: 4px 0 0 4px; 
+        }
+        .search button {
+            padding: 10px;
+            background: black;
+            color: white;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0; 
+        }
+        .login {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .login li {
+            margin-left: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navdiv">
+        <div class="text">Brand Waali Quality, Bazaar Waali Deal!</div>
+        <ul>
+            <li>Import@Snapdeal</li>
+            <li>Help Center</li>
+            <li>Sell On Snapdeal</li>
+            <li><i class="fa fa-mobile-phone"></i> Download App</li>
+            <li>Donate for Elderly</li>
+        </ul>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="SNAPDEALIMG1.jpg" alt="Snapdeal Logo">
+            <h3>Snapdeal</h3>
+        </div>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Search products and brands">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <ul class="login">
+            <li>Add to cart <i class="fa fa-shopping-cart" style="font-size:22px"></i></li>
+            <li>Sign In <i class="fa fa-user-circle-o" style="font-size:24px"></i></li>
+        </ul>
+    </nav>
+    <div class="sidebar">
+        <nav class="nav flex-column">
+            <h5>Top Categories</h5>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Men's Fashion</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Women's Fashion</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Home & Kitchen</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Toys, Kids' Fashion & more</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Beauty, Health & Daily Needs</a>
+            </div>
+            <h5>More Categories</h5>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Automotives</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Mobile & Accessories</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Electronics</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Sports, Fitness & Outdoor</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Computers & Gaming</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Books, Media & Music</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Hobbies</a>
+            </div>
+            <h5 class="trending-searches">Trending Searches</h5>
+            <div class="nav-item">
+                <a class="nav-link" href="#">kitchen product</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">shoes for men</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">kurti set</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">sandal men</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">sport shoe men</a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

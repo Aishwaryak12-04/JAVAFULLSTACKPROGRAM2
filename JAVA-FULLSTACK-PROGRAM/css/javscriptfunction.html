@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>My First Web Page</title>
+        <script>
+            function myFunction(){
+                document.write("<b>Hello world</b>");
+            }
+            function addition(a, b) {
+                let sum = a + b;
+                document.write("<b>Addition: " + sum + "</b>");
+            }
+            function subtraction(a, b) {
+                let difference = a - b;
+                document.write("<b>Subtraction: " + difference + "</b>");
+            }
+            function multiplication(a, b) {
+                let product = a * b;
+                document.write("<b>Multiplication: " + product + "</b>");
+            }
+            function division(a,b){
+                let result=a/b;
+                document.write("<b>division:"+result+"</b>");
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="myFunction()">Click Me</button>
+        <br>
+        <button onclick="addition(10, 20)">Addition</button>
+        <br>
+        <button onclick="subtraction(30, 20)">Subtraction</button>
+        <br>
+        <button onclick="multiplication(30, 20)">Multiplication</button>
+        <br>
+        <button onclick="division(30, 20)">division</button>   
+     </body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>String Functions in JavaScript</title>
+</head>
+<body>
+    <p id="lengthDisplay"></p>
+    <p id="charAtDisplay"></p>
+    <p id="sliceExtractDisplay"></p>
+    <p id="substringDisplay"></p>
+    <p id="substrDisplay"></p>
+    <p id="toUpperCaseDisplay"></p>
+    <p id="toLowerCaseDisplay"></p>
+    <p id="concatDisplay"></p>
+    <p id="trimDisplay"></p>
+    <p id="trimStartDisplay"></p>
+    <p id="trimEndDisplay"></p>
+    <p id="repeatDisplay"></p>
+    <p id="replaceDisplay"></p>
+    <p id="replaceAllDisplay"></p>
+    <p id="splitDisplay"></p>
+
+    <button id="displayLengthButton">String Length</button>
+    <button id="charAtButton">Character at Position</button>
+    <button id="sliceButton">Slice Extract</button>
+    <button id="substringButton">Substring</button>
+    <button id="substrButton">Substr</button>
+    <button id="toUpperCaseButton">To Upper Case</button>
+    <button id="toLowerCaseButton">To Lower Case</button>
+    <button id="concatButton">Concat</button>
+    <button id="trimButton">Trim</button>
+    <button id="trimStartButton">Trim Start</button>
+    <button id="trimEndButton">Trim End</button>
+    <button id="repeatButton">Repeat</button>
+    <button id="replaceButton">Replace</button>
+    <button id="replaceAllButton">Replace All</button>
+    <button id="splitButton">Split</button>
+
+    <script>
+        document.getElementById("displayLengthButton").onclick = function() {
+            let text = "HTML";
+            document.getElementById("lengthDisplay").innerText = "Length of the string is: " + text.length;
+        };
+
+        document.getElementById("charAtButton").onclick = function() {
+            let text = "HTML";
+            let position = 2;
+            document.getElementById("charAtDisplay").innerText = "Character at position " + position + " is: " + text.charAt(position);
+        };
+
+        document.getElementById("sliceButton").onclick = function() {
+            let text = "HTMLCSSJAVASCRIPT";
+            let part = text.slice(4, 11);
+            document.getElementById("sliceExtractDisplay").innerText = "Extracted part is: " + part;
+        };
+
+        document.getElementById("substringButton").onclick = function() {
+            let text = "HTMLCSSJAVASCRIPT";
+            let part = text.substring(4, 11);
+            document.getElementById("substringDisplay").innerText = "Substring part is: " + part;
+        };
+
+        document.getElementById("substrButton").onclick = function() {
+            let text = "HTMLCSSJAVASCRIPT";
+            let part = text.substr(4, 7);
+            document.getElementById("substrDisplay").innerText = "Substr part is: " + part;
+        };
+
+        document.getElementById("toUpperCaseButton").onclick = function() {
+            let text = "html";
+            document.getElementById("toUpperCaseDisplay").innerText = "To Upper Case: " + text.toUpperCase();
+        };
+
+        document.getElementById("toLowerCaseButton").onclick = function() {
+            let text = "HTML";
+            document.getElementById("toLowerCaseDisplay").innerText = "To Lower Case: " + text.toLowerCase();
+        };
+
+        document.getElementById("concatButton").onclick = function() {
+            let text1 = "HTML ";
+            let text2 = "CSS";
+            document.getElementById("concatDisplay").innerText = "Concatenated string: " + text1.concat(text2);
+        };
+
+        document.getElementById("trimButton").onclick = function() {
+            let text = "   HTML CSS   ";
+            document.getElementById("trimDisplay").innerText = "Trimmed string: '" + text.trim() + "'";
+        };
+
+        document.getElementById("trimStartButton").onclick = function() {
+            let text = "   HTML CSS ";
+            document.getElementById("trimStartDisplay").innerText = "Trimmed start string: '" + text.trimStart() + "'";
+        };
+
+        document.getElementById("trimEndButton").onclick = function() {
+            let text = "HTML CSS";
+            document.getElementById("trimEndDisplay").innerText = "Trimmed end string: '" + text.trimEnd() + "'";
+        };
+
+        document.getElementById("repeatButton").onclick = function() {
+            let text = "HTML CSS";
+            document.getElementById("repeatDisplay").innerText = "Repeated string: " + text.repeat(3);
+        };
+
+        document.getElementById("replaceButton").onclick = function() {
+            let text = "HTML CSS";
+            document.getElementById("replaceDisplay").innerText = "Replaced string: " + text.replace("HTML", "ANGULAR");
+        };
+
+        document.getElementById("replaceAllButton").onclick = function() {
+            let text = "HTML CSS CSS";
+            document.getElementById("replaceAllDisplay").innerText = "Replaced all string: " + text.replaceAll("CSS", "JavaScript");
+        };
+
+        document.getElementById("splitButton").onclick = function() {
+            let text = "HTML CSS";
+            let parts = text.split(" ");
+            document.getElementById("splitDisplay").innerText = "Split string: " + parts.join(", ");
+        };
+    </script>
+</body>
+</html>

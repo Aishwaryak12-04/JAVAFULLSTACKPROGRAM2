@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>my first web page</title>
+        <script>
+            function myFunction(){
+                let skills = ["C","C++","Java"];
+                document.write("<br>Array Elements :"+skills);
+                document.write("<br>Array Size :"+skills.length);
+                document.write("<br>First Element :"+skills[0]);
+                document.write("<br>List Element :"+skills[skills.length - 1]);
+                skills.push("python");
+                document.write("<br>Array Elements :"+ skills);
+                skills.pop();
+                document.write("<br>Array Elements :"+ skills);
+                 document.write("<br>Array Elements :");
+                 for(let i=0;i<skills.length; i++){
+                     document.write("<br>"+skills[i]);
+                 }
+
+            }
+        </script>
+    </head>
+    <body onload="myFunction()">
+
+    </body>
+</html>
