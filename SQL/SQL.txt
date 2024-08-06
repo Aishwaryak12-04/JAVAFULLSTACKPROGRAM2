@@ -1,0 +1,83 @@
+1)CREATE TABLE tbl_employee_new (
+  eid NUMBER(5),
+  ename VARCHAR2(20),
+  esalary NUMBER(5)
+);
+
+Output:
+Table created.
+
+2)INSERT INTO tbl_employee_new (eid, ename, esalary) 
+VALUES (101, 'Aathii', 5000);
+
+INSERT INTO tbl_employee_new (eid, ename, esalary) 
+VALUES (102, 'Aishuu', 7000);
+
+INSERT INTO tbl_employee_new (eid, ename, esalary) 
+VALUES (103, 'srii', 8000);
+
+Output:
+
+1 row(s) inserted.
+1 row(s) inserted.
+1 row(s) inserted.
+
+3)SELECT * FROM tbl_employee_new WHERE esalary > 4000;
+
+OUPUT:
+EID  ENAME  ESALARY
+101  Aathii  5000
+102  Aishuu  7000
+103  sri     8000
+
+4)SELECT DISTINCT eid FROM tbl_employee_new;
+
+Output:
+EID
+101
+102
+103
+5)SELECT * FROM tbl_employee_new WHERE ename != 'Aishu';
+Output:
+
+EID  ENAME  ESALARY
+101  Aathii  5000
+103  sri     8000
+
+6)SELECT * FROM tbl_employee_new;
+
+OUTPUT:
+EID  ENAME  ESALARY
+101  Aathii  5000
+102  Aishuu  7000
+103  sri     8000
+UPDATE tbl_employee_new SET esalary = 7000 WHERE eid = 102;
+COMMIT;
+ 
+OUTPUT:
+1 row(s) updated.
+
+7)UPDATE tbl_employee_new SET esalary = 8000, ename = 'sri' WHERE eid = 103;
+COMMIT;
+
+OUTPUT:
+1 row(s) updated.
+
+8)DELETE FROM tbl_employee_new WHERE eid = 102;
+COMMIT;
+1 row(s) deleted.
+
+OUTPUT:
+SELECT * FROM tbl_employee_new;
+EID  ENAME  ESALARY
+101  Aathii  5000
+103  sri     8000
+
+9)SELECT * FROM tbl_employee_new WHERE eid IN (101, 102);
+OUTPUT:
+
+EID  ENAME  ESALARY
+101  Aathii  5000
+SELECT * FROM tbl_employee_new WHERE eid NOT IN (101, 102);
+EID  ENAME  ESALARY
+103  sri     8000
