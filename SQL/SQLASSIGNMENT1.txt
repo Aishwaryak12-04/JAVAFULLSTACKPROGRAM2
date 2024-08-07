@@ -135,28 +135,9 @@ C00006 ROOPA
 Mumbai                                             400050          0
 
 
-4)SQL> SELECT CM.Name, CM.City, CM.Pincode
-  2  FROM CLIENT_MASTER_NEW CM
-  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
-  4  WHERE SO.Order_No = 'O19003';
 
-NAME
---------------------------------------------------
-CITY                                               PINCOD
--------------------------------------------------- ------
-SMITHA JAIN
-Mumbai                                             400054
-SQL> SELECT CM.Name, CM.City, CM.Pincode
-  2  FROM CLIENT_MASTER_NEW CM
-  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
-  4  WHERE SO.Order_No = 'O19002';
 
-NAME
---------------------------------------------------
-CITY                                               PINCOD
--------------------------------------------------- ------
-VANDANA RAO
-Chennai                                            780001
+
 
 
 5)SQL> SELECT Name || ' lives in the city of ' || City || '.' AS Sentence
@@ -173,19 +154,6 @@ ROOPA lives in the city of Mumbai.
 
 6 rows selected.
 
-6)SQL> SELECT CM.Client_No, CM.Name, CM.City, CM.Pincode
-  2  FROM CLIENT_MASTER_NEW CM
-  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
-  4  WHERE SO.Order_Status = 'In process';
 
-CLIENT NAME
------- --------------------------------------------------
-CITY                                               PINCOD
--------------------------------------------------- ------
-C00001 SMITHA JAIN
-Mumbai                                             400054
-
-C00005 RAVI SHANKAR
-Delhi                                              100001
 
 
