@@ -168,7 +168,7 @@ Table altered.
 
 Table altered.
 
-170 ALTER TABLE SALES
+17) ALTER TABLE SALES
   2  RENAME TO TBL_SALES;
 
 Table altered.
