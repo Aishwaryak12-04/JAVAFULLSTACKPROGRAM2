@@ -1,0 +1,277 @@
+SQL> CONNECT SYSTEM
+Enter password:
+Connected.
+SQL> CREATE TABLE tbl_employee (
+  2      eid NUMBER(5),
+  3      ename VARCHAR2(20),
+  4      esalary NUMBER(5)
+  5  );
+CREATE TABLE tbl_employee (
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> DROP TABLE tbl_employee;
+
+Table dropped.
+
+SQL> CREATE TABLE tbl_employee (
+  2      eid NUMBER(5),
+  3      ename VARCHAR2(20),
+  4      esalary NUMBER(5)
+  5  );
+
+Table created.
+
+SQL> INSERT INTO tbl_employee (eid, ename, esalary)
+  2  VALUES (1, 'Aathi', 5000);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO tbl_employee (eid, ename, esalary)
+  2  VALUES (2, 'Aishu', 7870);
+
+1 row created.
+
+SQL> INSERT INTO tbl_employee (eid, ename, esalary)
+  2  VALUES (3, 'sri', 8700);
+
+1 row created.
+
+SQL> SELECT * FROM tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> SELECT * FROM tbl_employee
+  2  WHERE esalary BETWEEN 5000 AND 8000;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+
+SQL> SELECT * FROM tbl_employee
+  2  WHERE esalary not BETWEEN 5000 AND 8000;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         3 sri                        8700
+
+SQL> SELECT * FROM tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> SELECT * FROM tbl_employee
+  2  WHERE esalary >= 5000 AND  eid in (1 , 2 );
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+
+SQL> SELECT * FROM tbl_employee
+  2  WHERE esalary >= 5000 or  eid in (1 , 2 );
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> SELECT * FROM tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> select * From tbl_employee where ename like 'J%';
+
+no rows selected
+
+SQL> select * From tbl_employee where ename like '_a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+
+SQL> select * From tbl_employee where ename like '_o%';
+
+no rows selected
+
+SQL> select * From tbl_employee where ename not  like 'J%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> select * From tbl_employee where ename  not like '_a%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> select * From tbl_employee where ename like '__e%';
+
+no rows selected
+
+SQL> select * From tbl_employee where ename like '%J%';
+
+no rows selected
+
+SQL> select * From tbl_employee where ename like '%h%';
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+
+SQL> insert into tbl_employee (eid , esalary) values (7,6988);
+
+1 row created.
+
+SQL> SELECT * FROM tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> select * From tbl_employee where ename is null;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         7                            6988
+
+SQL> select * From tbl_employee where ename is not  null;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+
+SQL> SELECT * FROM tbl_employee;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> SELECT * FROM tbl_employee order by eid ;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> SELECT * FROM tbl_employee order by eid desc;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         7                            6988
+         3 sri                        8700
+         2 Aishu                      7870
+         1 Aathi                      5000
+
+SQL> SELECT * FROM tbl_employee order by ename;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> SELECT * FROM tbl_employee order by eid , ename;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> SELECT * FROM tbl_employee order by eid , ename desc;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> alter table tbl_employee add doj date;
+
+Table altered.
+
+SQL> SELECT * FROM tbl_employee ;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> update tbl_employee set doj=sysdate where eid=1;
+
+1 row updated.
+
+SQL> SELECT * FROM tbl_employee ;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         1 Aathi                      5000 07-AUG-24
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+
+SQL>  update tbl_employee set doj='05-aug-24' where eid=1;
+
+1 row updated.
+
+SQL> SELECT * FROM tbl_employee ;
+
+       EID ENAME                   ESALARY DOJ
+---------- -------------------- ---------- ---------
+         1 Aathi                      5000 05-AUG-24
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL> alter table tbl_employee drop column doj;
+
+Table altered.
+
+SQL> SELECT * FROM tbl_employee ;
+
+       EID ENAME                   ESALARY
+---------- -------------------- ----------
+         1 Aathi                      5000
+         2 Aishu                      7870
+         3 sri                        8700
+         7                            6988
+
+SQL>
