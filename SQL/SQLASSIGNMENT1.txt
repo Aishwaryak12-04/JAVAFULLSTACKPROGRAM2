@@ -1,0 +1,191 @@
+SQL> CONNECT SYSTEM
+Enter password:
+Connected.
+SQL> CREATE TABLE CLIENT_MASTER_NEW (
+  2  Client_No CHAR(6) PRIMARY KEY,
+  3      Name VARCHAR(50),
+  4      City VARCHAR(50),
+  5      Pincode CHAR(6),
+  6      Bal_due DECIMAL(10, 2)
+  7  );
+
+Table created.
+
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+  2  VALUES ('C00001', 'SMITHA JAIN', 'Mumbai', '400054', 15000);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+  2  VALUES ('C00002', 'VANDANA RAO', 'Chennai', '780001', 0);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+  2  VALUES ('C00003', 'PREM PUJARI', 'Mumbai', '400057', 5000);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+  2  VALUES ('C00004', 'BASU NATH', 'Mumbai', '400056', 0);
+
+1 row created.
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+
+  2  VALUES ('C00005', 'RAVI SHANKAR', 'Delhi', '100001', 2000);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO CLIENT_MASTER_NEW (Client_No, Name, City, Pincode, Bal_due)
+
+  2  VALUES ('C00006', 'ROOPA', 'Mumbai', '400050', 0);
+
+1 row created.
+SQL> CREATE TABLE SALE_ORDERR
+  2  (
+  3      Order_No CHAR(6) PRIMARY KEY,
+  4      Order_Date DATE,
+  5      Client_No CHAR(6),
+  6      Salesman_No CHAR(6),
+  7      Dely_Date DATE,
+  8      Order_Status VARCHAR(20),
+  9      FOREIGN KEY (Client_No) REFERENCES CLIENT_MASTER(Client_No)
+ 10  );
+
+Table created.
+
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O19001', TO_DATE('12-Jan-13', 'DD-Mon-YY'), 'C00001', 'S00001', TO_DATE('20-Jan-13', 'DD-Mon-YY'), 'In process');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O19002', TO_DATE('25-Jan-13', 'DD-Mon-YY'), 'C00002', 'S00002', TO_DATE('27-Jan-13', 'DD-Mon-YY'), 'Cancelled');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O46865', TO_DATE('18-Feb-13', 'DD-Mon-YY'), 'C00003', 'S00003', TO_DATE('20-Feb-13', 'DD-Mon-YY'), 'Fulfilled');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O19003', TO_DATE('03-Apr-13', 'DD-Mon-YY'), 'C00001', 'S00001', TO_DATE('07-Apr-13', 'DD-Mon-YY'), 'Fulfilled');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O46866', TO_DATE('20-May-13', 'DD-Mon-YY'), 'C00004', 'S00002', TO_DATE('07-Apr-13', 'DD-Mon-YY'), 'Cancelled');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SALE_ORDER (Order_No, Order_Date, Client_No, Salesman_No, Dely_Date, Order_Status)
+  2  VALUES ('O19008', TO_DATE('24-May-13', 'DD-Mon-YY'), 'C00005', 'S00004', TO_DATE('26-May-13', 'DD-Mon-YY'), 'In process');
+
+1 row created.
+
+SQL> SELECT *
+  2  FROM CLIENT_MASTER_NEW
+  3  WHERE Bal_due = 0;
+
+1)CLIENT NAME
+------ --------------------------------------------------
+CITY                                               PINCOD    BAL_DUE
+-------------------------------------------------- ------ ----------
+C00002 VANDANA RAO
+Chennai                                            780001          0
+
+C00004 BASU NATH
+Mumbai                                             400056          0
+
+C00006 ROOPA
+Mumbai                                             400050          0
+
+
+2)SQL> UPDATE CLIENT_MASTER_NEW
+  2  SET City = 'Jaipur'
+  3  WHERE Client_No = 'C00004';
+
+1 row updated.
+
+3)SQL> SELECT *
+  2  FROM CLIENT_MASTER_NEW
+  3  WHERE City = 'Mumbai';
+
+CLIENT NAME
+------ --------------------------------------------------
+CITY                                               PINCOD    BAL_DUE
+-------------------------------------------------- ------ ----------
+C00001 SMITHA JAIN
+Mumbai                                             400054      15000
+
+C00003 PREM PUJARI
+Mumbai                                             400057       5000
+
+C00006 ROOPA
+Mumbai                                             400050          0
+
+
+4)SQL> SELECT CM.Name, CM.City, CM.Pincode
+  2  FROM CLIENT_MASTER_NEW CM
+  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
+  4  WHERE SO.Order_No = 'O19003';
+
+NAME
+--------------------------------------------------
+CITY                                               PINCOD
+-------------------------------------------------- ------
+SMITHA JAIN
+Mumbai                                             400054
+SQL> SELECT CM.Name, CM.City, CM.Pincode
+  2  FROM CLIENT_MASTER_NEW CM
+  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
+  4  WHERE SO.Order_No = 'O19002';
+
+NAME
+--------------------------------------------------
+CITY                                               PINCOD
+-------------------------------------------------- ------
+VANDANA RAO
+Chennai                                            780001
+
+
+5)SQL> SELECT Name || ' lives in the city of ' || City || '.' AS Sentence
+  2  FROM CLIENT_MASTER_NEW;
+
+SENTENCE
+--------------------------------------------------------------------------------
+SMITHA JAIN lives in the city of Mumbai.
+VANDANA RAO lives in the city of Chennai.
+PREM PUJARI lives in the city of Mumbai.
+BASU NATH lives in the city of Jaipur.
+RAVI SHANKAR lives in the city of Delhi.
+ROOPA lives in the city of Mumbai.
+
+6 rows selected.
+
+6)SQL> SELECT CM.Client_No, CM.Name, CM.City, CM.Pincode
+  2  FROM CLIENT_MASTER_NEW CM
+  3  JOIN SALE_ORDER SO ON CM.Client_No = SO.Client_No
+  4  WHERE SO.Order_Status = 'In process';
+
+CLIENT NAME
+------ --------------------------------------------------
+CITY                                               PINCOD
+-------------------------------------------------- ------
+C00001 SMITHA JAIN
+Mumbai                                             400054
+
+C00005 RAVI SHANKAR
+Delhi                                              100001
+
+
