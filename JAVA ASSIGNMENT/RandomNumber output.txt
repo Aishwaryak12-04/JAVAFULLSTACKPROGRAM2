@@ -1,0 +1,5 @@
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>javac RandomNumber.java
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java RandomNumber
+Random number: 3

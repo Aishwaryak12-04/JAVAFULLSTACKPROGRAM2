@@ -1,0 +1,4 @@
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>javac CompareObjects.java
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java CompareObjects
+Both objects are equal.

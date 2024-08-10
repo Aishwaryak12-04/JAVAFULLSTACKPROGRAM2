@@ -1,0 +1,4 @@
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>javac ArmstrongNumber.java
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java ArmstrongNumber
+153 is an Armstrong number.

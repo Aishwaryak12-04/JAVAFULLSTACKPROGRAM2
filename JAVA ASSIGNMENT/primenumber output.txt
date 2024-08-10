@@ -1,0 +1,2 @@
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java PrimeNumber
+29 is a prime number.

@@ -1,0 +1,6 @@
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>javac CreateOb
+ject.java
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java CreateObj
+ect
+Name: John, Age: 25

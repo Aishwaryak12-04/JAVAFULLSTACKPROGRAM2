@@ -1,0 +1,2 @@
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\JAVA ASSIGNMENT>java Palindrome
+madam is a palindrome.
