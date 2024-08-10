@@ -1,0 +1,16 @@
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\CORE JAVA>javac Array.java
+
+C:\Users\ADMIN\Downloads\JAVAFULLSTACKPROGRAM\CORE JAVA>java Array
+Enter 5 integer values:
+4
+5
+7
+9
+6
+Array Elements are:
+4
+5
+7
+9
+6
+Sum of all array elements :31
