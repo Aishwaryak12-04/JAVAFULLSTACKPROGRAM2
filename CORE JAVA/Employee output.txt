@@ -1,0 +1,14 @@
+C:\Users\ADMIN\Downloads>javac Employee.java
+
+C:\Users\ADMIN\Downloads>java Employee
+Enter employee id
+101
+Enter employee name
+aishu
+Enter employee salary
+3000
+Enter employee id101
+Enter employee nameaishu
+Enter employee salary3000.0
+
+C:\Users\ADMIN\Downloads>
