@@ -1,0 +1,7 @@
+
+C:\Users\ADMIN\Downloads>javac Bigger.java
+
+C:\Users\ADMIN\Downloads>java Bigger
+a is greater than b
+
+C:\Users\ADMIN\Downloads>
