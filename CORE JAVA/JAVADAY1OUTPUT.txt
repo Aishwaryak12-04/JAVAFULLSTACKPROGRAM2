@@ -1,0 +1,11 @@
+Microsoft Windows [Version 10.0.22631.3958]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ADMIN>cd downloads
+
+C:\Users\ADMIN\Downloads>javac javaday1program.java
+
+C:\Users\ADMIN\Downloads>java javaday1program
+Welcome to Java
+
+C:\Users\ADMIN\Downloads>
