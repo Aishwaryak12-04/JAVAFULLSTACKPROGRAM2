@@ -87,7 +87,7 @@ public class Question7 {
         }
     }
 
-    // Method to withdraw money from an account
+    
     public void withdraw(String accountNumber, double amount) {
         Account account = getAccount(accountNumber);
         if (account != null) {
