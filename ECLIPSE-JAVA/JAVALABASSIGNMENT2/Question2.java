@@ -18,7 +18,7 @@ public class Question2 {
         dog2.setName("Rocky");
         dog2.setBreed("Poodle");
 
-        // Print updated details
+        
         System.out.println("\nUpdated details:");
         System.out.println("Dog 1 - Name: " + dog1.getName() + ", Breed: " + dog1.getBreed());
         System.out.println("Dog 2 - Name: " + dog2.getName() + ", Breed: " + dog2.getBreed());
@@ -35,7 +35,7 @@ class Dog {
         this.breed = breed;
     }
 
-    // Getter for the name
+
     public String getName() {
         return name;
     }
